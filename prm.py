@@ -234,6 +234,8 @@ def new_work_page1(wait, today_str, description):
     # type <date>
     requested_start_input.send_keys(today_str)
 
+    sleep(1)
+
     logger.debug("locate requested finish input")
     # locate requested finish input
     requested_finish_input = wait.until(
@@ -434,7 +436,7 @@ def _click_enter(driver):
     return None
 
 
-def enter_status_flag(wait, driver):
+def enter_status_flag(wait, driver, grid_canvas_right):
     """
     Locates "Enter Status Flag" and changes it from "No" to "Yes"
 
@@ -446,6 +448,9 @@ def enter_status_flag(wait, driver):
     driver: selenium.webdriver.chrome.webdriver.WebDriver
         The driver used to control the browser
 
+    grid_canvas_right: selenium.webdriver.remote.webelement.WebElement
+        Location of grid on work and assignments page
+
     Returns
     -------
     None
@@ -453,8 +458,8 @@ def enter_status_flag(wait, driver):
 
     logger = logging.getLogger("enter_status_flag")
 
-    logger.debug("_locate_grid_canvas_right")
-    grid_canvas_right = _locate_grid_canvas_right(wait=wait)
+    # logger.debug("_locate_grid_canvas_right")
+    # grid_canvas_right = _locate_grid_canvas_right(wait=wait)
 
     logger.debug("locate enter status flag")
     # locate enter status flag
@@ -485,11 +490,14 @@ def enter_status_flag(wait, driver):
     # click <option>
     enter_status_flag_selector.click()
 
+    # wait a sec
+    sleep(1)
+
     logger.debug("return None")
     return None
 
 
-def bi_assignment_owner(wait, driver, bi_assignment_owner_name):
+def bi_assignment_owner(wait, driver, grid_canvas_right, bi_assignment_owner_name):
     """
     Locate "BI Assignment Owner" field and select option
 
@@ -501,6 +509,9 @@ def bi_assignment_owner(wait, driver, bi_assignment_owner_name):
     driver: selenium.webdriver.chrome.webdriver.WebDriver
         The driver used to control the browser
 
+    grid_canvas_right: selenium.webdriver.remote.webelement.WebElement
+        Location of grid on work and assignments page
+
     bi_assignment_owner_name: str
         Name of BI Assignment Owner
 
@@ -511,14 +522,14 @@ def bi_assignment_owner(wait, driver, bi_assignment_owner_name):
 
     logger = logging.getLogger("bi_assignment_owner")
 
-    logger.debug("_locate_grid_canvas_right")
-    grid_canvas_right = _locate_grid_canvas_right(wait=wait)
+    # logger.debug("_locate_grid_canvas_right")
+    # grid_canvas_right = _locate_grid_canvas_right(wait=wait)
 
     logger.debug("locate the bi assignment owner")
     # locate the bi assignment owner  # **Analysis and Solution Development**
     bi_assignment_owner_ = grid_canvas_right.find_elements_by_css_selector(
         "div:last-of-type"
-        "> div:nth-child(3)"
+        "> div[class='slick-cell l4 r4 hasEditor']"
     )[-1]
 
     logger.debug("click it")
@@ -547,7 +558,7 @@ def bi_assignment_owner(wait, driver, bi_assignment_owner_name):
     return None
 
 
-def bi_team(wait, driver, bi_team_name):
+def bi_team(wait, driver, grid_canvas_right, bi_team_name):
     """
     Locate "BI Team" field and select option
 
@@ -559,6 +570,9 @@ def bi_team(wait, driver, bi_team_name):
     driver: selenium.webdriver.chrome.webdriver.WebDriver
         The driver used to control the browser
 
+    grid_canvas_right: selenium.webdriver.remote.webelement.WebElement
+        Location of grid on work and assignments page
+
     bi_team_name: str
         Name of BI Team
 
@@ -569,8 +583,8 @@ def bi_team(wait, driver, bi_team_name):
 
     logger = logging.getLogger("bi_team")
 
-    logger.debug("_locate_grid_canvas_right")
-    grid_canvas_right = _locate_grid_canvas_right(wait)
+    # logger.debug("_locate_grid_canvas_right")
+    # grid_canvas_right = _locate_grid_canvas_right(wait)
 
     logger.debug("locate bi team")
     # locate bi team
@@ -602,6 +616,43 @@ def bi_team(wait, driver, bi_team_name):
     bi_team_selector.click()
 
     logger.debug("return None")
+    return None
+
+
+def work_and_assignments(wait, driver, bi_assignment_owner_name, bi_team_name):
+    """
+    Execute `enter_status_flag`, `bi_assignment_owner` and `bi_team` functions
+
+    Parameters
+    ----------
+    wait: selenium.webdriver.support.wait.WebDriverWait
+        Tells the driver to look for an element every 0.5 seconds until it is found
+
+    driver: selenium.webdriver.chrome.webdriver.WebDriver
+        The driver used to control the browser
+
+    bi_assignment_owner_name: str
+        Name of BI Assignment Owner
+
+    bi_team_name: str
+        Name of BI Team
+
+    Returns
+    -------
+
+    """
+
+    logger = logging.getLogger("work_and_assignments")
+
+    logger.debug("_locate_grid_canvas_right")
+    grid_canvas_right = _locate_grid_canvas_right(wait=wait)
+
+    enter_status_flag(wait, driver, grid_canvas_right)
+
+    bi_assignment_owner(wait, driver, grid_canvas_right, bi_assignment_owner_name)
+
+    bi_team(wait, driver, grid_canvas_right, bi_team_name)
+
     return None
 
 
@@ -880,7 +931,7 @@ def navigate_to_work_view(wait):
     #
     work_view_button = wait.until(
         EC.presence_of_element_located(
-            (By.CSS_SELECTOR, "li[title='Work View']")
+            (By.CSS_SELECTOR, "li[title='Work View'] > span[class='bannerMenuItemText']")
         )
     )
 
@@ -964,13 +1015,22 @@ def bi_work_type(wait):
     return None
 
 
-def executive_sponsor(wait, executive_sponsor_name):
+def executive_sponsor(wait, driver, executive_sponsor_name):
     """"""
 
     #
     executive_sponsor_input = wait.until(
         EC.presence_of_element_located(
-            (By.XPATH, "//label[text()='Executive Sponsor']/parent::div//input")
+            (
+                By.XPATH,
+                "//label[text()='Executive Sponsor']"
+                "/parent::div"
+                "//div[@class='attribute-field']"
+                "//div[@class='editor-container datapicker-container required']"
+                "//div[@class='data-picker-form-field-container attribute-part']"
+                "//span[@class='pickerplusmain pickerplusmaingrid']"
+                "//input[@type='text']"
+            )
         )
     )
 
@@ -978,15 +1038,22 @@ def executive_sponsor(wait, executive_sponsor_name):
 
     #
     # executive_sponsor_input.click()  # not interactable
-    executive_sponsor_input.clear()
+    # executive_sponsor_input.clear()  # not interactable
+
+    actions = ActionChains(driver=driver)
+
+    actions.move_to_element(executive_sponsor_input)
+    actions.click()
+    actions.send_keys(executive_sponsor_name)
+    actions.perform()
 
     #
-    executive_sponsor_input.send_keys(executive_sponsor_name)
+    # executive_sponsor_input.send_keys(executive_sponsor_name)
 
     return None
 
 
-def bi_business_owner(wait, bi_business_owner_name):
+def bi_business_owner(wait, driver, bi_business_owner_name):
     """"""
 
     #
@@ -1000,10 +1067,17 @@ def bi_business_owner(wait, bi_business_owner_name):
 
     #
     # bi_business_owner_input.click()  # not interactable
-    bi_business_owner_input.clear()
+    # bi_business_owner_input.clear()  # not interactable
+
+    actions = ActionChains(driver=driver)
+
+    actions.move_to_element(bi_business_owner_input)
+    actions.click()
+    actions.send_keys(bi_business_owner_name)
+    actions.perform()
 
     #
-    bi_business_owner_input.send_keys(bi_business_owner_name)
+    # bi_business_owner_input.send_keys(bi_business_owner_name)
 
     return None
 
@@ -1093,7 +1167,7 @@ def work_description(wait, driver, work_description_text):
         EC.presence_of_element_located(
             (
                 By.XPATH,
-                f"//div[@title='Detailed Work Description.']"
+                "//div[@title='Detailed Work Description.']"
                 "//div[@class='CodeMirror cm-s-paper CodeMirror-wrap']"
                 "//div[@class='CodeMirror-lines']"
             )
@@ -1101,12 +1175,13 @@ def work_description(wait, driver, work_description_text):
     )
 
     #
-    work_description_text_area.click()
+    # work_description_text_area.click()
 
     #
     actions = ActionChains(driver=driver)
 
     #
+    actions.click(work_description_text_area)
     actions.send_keys(work_description_text)
     actions.perform()
 
@@ -1129,12 +1204,13 @@ def business_need(wait, driver, business_need_text):
     )
 
     #
-    business_need_text_area.click()
+    # business_need_text_area.click()
 
     #
     actions = ActionChains(driver=driver)
 
     #
+    actions.click(business_need_text_area)
     actions.send_keys(business_need_text)
     actions.perform()
 
@@ -1153,6 +1229,91 @@ def save_edits(wait):
     save_button.click()
 
     return None
+
+
+def describe_and_categorize_bi(
+        wait,
+        driver,
+        bi_swim_lane_name,
+        executive_sponsor_name,
+        bi_business_owner_name,
+        bi_domain_name,
+        requestor_name,
+        bi_liaison_name,
+        work_description_text,
+        business_need_text
+):
+    """
+    Edit the Describe & Categorize BI page
+
+    Parameters
+    ----------
+    wait: selenium.webdriver.support.wait.WebDriverWait
+        Tells the driver to look for an element every 0.5 seconds until it is found
+
+    driver: selenium.webdriver.chrome.webdriver.WebDriver
+        The driver used to control the browser
+
+    bi_swim_lane_name: str
+        text to enter in BI Swim Lane field
+
+    executive_sponsor_name: str
+        text to enter in Executive Sponsor field
+
+    bi_business_owner_name: str
+        text to enter in BI Business Owner field
+
+    bi_domain_name: str
+        text to enter in BI Domain field
+
+    requestor_name: str
+        text to enter in Requestor field
+
+    bi_liaison_name: str
+        text to enter in BI Liaison field
+
+    work_description_text: str
+        text to enter in Work Description field
+
+    business_need_text: str
+        text to enter in Business Need field
+
+    Returns
+    -------
+    None
+    """
+
+    logger = logging.getLogger("describe_and_categorize_bi")
+
+    logger.debug("bi_swim_lane")
+    bi_swim_lane(wait, bi_swim_lane_name)
+
+    logger.debug("bi_work_type")
+    bi_work_type(wait)
+
+    logger.debug("executive_sponsor")
+    executive_sponsor(wait, driver, executive_sponsor_name)
+
+    logger.debug("bi_business_owner")
+    bi_business_owner(wait, driver, bi_business_owner_name)
+
+    logger.debug("bi_domain")
+    bi_domain(wait, driver, bi_domain_name)
+
+    logger.debug("requestor")
+    requestor(wait, driver, requestor_name)
+
+    logger.debug("bi_liaison")
+    bi_liaison(wait, driver, bi_liaison_name)
+
+    logger.debug("work_description")
+    work_description(wait, driver, work_description_text)
+
+    logger.debug("business_need")
+    business_need(wait, driver, business_need_text)
+
+    logger.debug("save_edits")
+    save_edits(wait)
 
 
 if __name__ == "__main__":
@@ -1245,14 +1406,8 @@ if __name__ == "__main__":
         logger.info("new_work_page2")
         new_work_page2(wait, today_str, bi_service_name)
 
-        logger.info("enter_status_flag")
-        enter_status_flag(wait, driver)
-
-        logger.info("bi_assignment_owner")
-        bi_assignment_owner(wait, driver, bi_assignment_owner_name)
-
-        logger.info("bi_team")
-        bi_team(wait, driver, bi_team_name)
+        logger.info("work_and_assignments")
+        work_and_assignments(wait, driver, bi_assignment_owner_name, bi_team_name)
 
         logger.info("open_resource_search_window")
         open_resource_search_window(wait, driver)
@@ -1268,35 +1423,19 @@ if __name__ == "__main__":
         logger.info("edit_work_detail")
         edit_work_detail(driver, wait)
 
-        logger.info("bi_swim_lane")
-        bi_swim_lane(wait, bi_swim_lane_name)
-
-        logger.info("bi_work_type")
-        bi_work_type(wait)
-
-        logger.info("executive_sponsor")
-        executive_sponsor(wait, executive_sponsor_name)
-
-        logger.info("bi_business_owner")
-        bi_business_owner(wait, bi_business_owner_name)
-
-        logger.info("bi_domain")
-        bi_domain(wait, driver, bi_domain_name)
-
-        logger.info("requestor")
-        requestor(wait, driver, requestor_name)
-
-        logger.info("bi_liaison")
-        bi_liaison(wait, driver, bi_liaison_name)
-
-        logger.info("work_description")
-        work_description(wait, driver, work_description_text)
-
-        logger.info("business_need")
-        business_need(wait, driver, business_need_text)
-
-        logger.info("save_edits")
-        save_edits(wait)
+        logger.info("describe_and_categorize_bi")
+        describe_and_categorize_bi(
+            wait,
+            driver,
+            bi_swim_lane_name,
+            executive_sponsor_name,
+            bi_business_owner_name,
+            bi_domain_name,
+            requestor_name,
+            bi_liaison_name,
+            work_description_text,
+            business_need_text
+        )
 
         sleep(2)
 
