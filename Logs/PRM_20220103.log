@@ -1,0 +1,27 @@
+2022-01-03 10:57:53,063 - __main__ - INFO - read data
+2022-01-03 10:57:54,166 - __main__ - INFO - define options
+2022-01-03 10:57:54,166 - __main__ - INFO - _get_date
+2022-01-03 10:57:54,181 - __main__ - INFO - create driver
+2022-01-03 10:57:55,435 - __main__ - INFO - define wait
+2022-01-03 10:57:55,442 - __main__ - INFO - get project info
+2022-01-03 10:57:55,442 - __main__ - INFO - login
+2022-01-03 10:58:00,793 - __main__ - INFO - new_work_page1 January 2022 Clinical Affairs Domain Support
+2022-01-03 10:58:11,240 - __main__ - INFO - new_work_page2
+2022-01-03 10:58:25,489 - __main__ - INFO - enter_status_flag
+2022-01-03 10:58:27,686 - __main__ - INFO - bi_assignment_owner
+2022-01-03 10:58:28,812 - __main__ - INFO - bi_team
+2022-01-03 10:58:29,903 - __main__ - INFO - open_resource_search_window
+2022-01-03 10:58:30,847 - __main__ - INFO - allocate
+2022-01-03 10:58:34,704 - __main__ - INFO - navigate_to_work_view
+2022-01-03 10:58:36,312 - __main__ - INFO - edit_work_detail
+2022-01-03 10:58:39,135 - __main__ - INFO - bi_swim_lane
+2022-01-03 10:58:39,174 - __main__ - INFO - bi_work_type
+2022-01-03 10:58:39,204 - __main__ - INFO - executive_sponsor
+2022-01-03 10:58:40,296 - __main__ - INFO - bi_business_owner
+2022-01-03 10:58:41,382 - __main__ - INFO - bi_domain
+2022-01-03 10:58:42,775 - __main__ - INFO - requestor
+2022-01-03 10:58:44,154 - __main__ - INFO - bi_liaison
+2022-01-03 10:58:44,756 - __main__ - INFO - work_description
+2022-01-03 10:58:44,958 - __main__ - INFO - business_need
+2022-01-03 10:58:45,120 - __main__ - INFO - save_edits
+2022-01-03 10:58:47,185 - __main__ - INFO - quit

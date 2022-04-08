@@ -1,0 +1,11 @@
+2021-11-03 15:37:24,238 - __main__ - INFO - read data
+2021-11-03 15:37:27,200 - __main__ - INFO - define options
+2021-11-03 15:37:27,201 - __main__ - INFO - _get_date
+2021-11-03 15:42:51,268 - __main__ - INFO - read data
+2021-11-03 15:42:54,255 - __main__ - INFO - define options
+2021-11-03 15:42:54,258 - __main__ - INFO - _get_date
+2021-11-03 15:42:54,261 - __main__ - INFO - create driver
+2021-11-03 15:42:55,998 - __main__ - INFO - define wait
+2021-11-03 15:42:56,002 - __main__ - INFO - get project info
+2021-11-03 15:42:56,004 - __main__ - INFO - login
+2021-11-03 15:42:58,411 - __main__ - INFO - new_work_page1

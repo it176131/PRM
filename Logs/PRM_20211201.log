@@ -1,0 +1,87 @@
+2021-12-01 15:52:52,056 - __main__ - INFO - read data
+2021-12-01 15:52:55,015 - __main__ - INFO - define options
+2021-12-01 15:52:55,017 - __main__ - INFO - _get_date
+2021-12-01 15:52:55,018 - __main__ - INFO - create driver
+2021-12-01 15:52:56,198 - __main__ - INFO - define wait
+2021-12-01 15:52:56,201 - __main__ - INFO - get project info
+2021-12-01 15:52:56,201 - __main__ - INFO - login
+2021-12-01 15:53:03,892 - __main__ - INFO - new_work_page1 December 2021 Ambulatory Domain Support
+2021-12-01 15:53:15,904 - __main__ - INFO - new_work_page2
+2021-12-01 15:53:23,316 - __main__ - INFO - enter_status_flag
+2021-12-01 15:53:25,296 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:53:26,445 - __main__ - INFO - bi_team
+2021-12-01 15:53:27,575 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:53:28,672 - __main__ - INFO - allocate
+2021-12-01 15:53:33,734 - __main__ - INFO - get project info
+2021-12-01 15:53:33,735 - __main__ - INFO - login
+2021-12-01 15:53:36,623 - __main__ - INFO - new_work_page1 December 2021 Cancer Doman Support
+2021-12-01 15:53:38,125 - __main__ - INFO - new_work_page2
+2021-12-01 15:53:54,525 - __main__ - INFO - enter_status_flag
+2021-12-01 15:53:56,976 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:53:58,097 - __main__ - INFO - bi_team
+2021-12-01 15:53:59,235 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:54:00,255 - __main__ - INFO - allocate
+2021-12-01 15:54:05,051 - __main__ - INFO - get project info
+2021-12-01 15:54:05,051 - __main__ - INFO - login
+2021-12-01 15:54:08,115 - __main__ - INFO - new_work_page1 December 2021 Clinical Affairs Domain Support
+2021-12-01 15:54:09,689 - __main__ - INFO - new_work_page2
+2021-12-01 15:54:24,019 - __main__ - INFO - enter_status_flag
+2021-12-01 15:54:26,559 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:54:27,770 - __main__ - INFO - bi_team
+2021-12-01 15:54:28,943 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:54:29,958 - __main__ - INFO - allocate
+2021-12-01 15:54:34,437 - __main__ - INFO - get project info
+2021-12-01 15:54:34,438 - __main__ - INFO - login
+2021-12-01 15:54:37,115 - __main__ - INFO - new_work_page1 December 2021 Perioperative Domain Support
+2021-12-01 15:54:38,589 - __main__ - INFO - new_work_page2
+2021-12-01 15:54:53,274 - __main__ - INFO - enter_status_flag
+2021-12-01 15:54:55,506 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:54:56,700 - __main__ - INFO - bi_team
+2021-12-01 15:54:57,902 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:54:58,899 - __main__ - INFO - allocate
+2021-12-01 15:55:03,051 - __main__ - INFO - get project info
+2021-12-01 15:55:03,052 - __main__ - INFO - login
+2021-12-01 15:55:05,824 - __main__ - INFO - new_work_page1 December 2021 Vizient Reporting
+2021-12-01 15:55:07,320 - __main__ - INFO - new_work_page2
+2021-12-01 15:55:21,975 - __main__ - INFO - enter_status_flag
+2021-12-01 15:55:24,210 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:55:25,395 - __main__ - INFO - bi_team
+2021-12-01 15:55:26,615 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:55:27,670 - __main__ - INFO - allocate
+2021-12-01 15:55:32,101 - __main__ - INFO - get project info
+2021-12-01 15:55:32,102 - __main__ - INFO - login
+2021-12-01 15:55:34,782 - __main__ - INFO - new_work_page1 December 2021 Press Ganey Tasks
+2021-12-01 15:55:36,250 - __main__ - INFO - new_work_page2
+2021-12-01 15:55:50,321 - __main__ - INFO - enter_status_flag
+2021-12-01 15:55:52,225 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:55:53,377 - __main__ - INFO - bi_team
+2021-12-01 15:55:54,560 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:55:55,550 - __main__ - INFO - allocate
+2021-12-01 15:56:00,170 - __main__ - INFO - get project info
+2021-12-01 15:56:00,170 - __main__ - INFO - login
+2021-12-01 15:56:02,864 - __main__ - INFO - new_work_page1 December 2021 Vizient ODB Submission
+2021-12-01 15:56:04,335 - __main__ - INFO - new_work_page2
+2021-12-01 15:56:19,146 - __main__ - INFO - enter_status_flag
+2021-12-01 15:56:21,583 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:56:22,758 - __main__ - INFO - bi_team
+2021-12-01 15:56:23,935 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:56:24,952 - __main__ - INFO - allocate
+2021-12-01 15:56:30,186 - __main__ - INFO - get project info
+2021-12-01 15:56:30,186 - __main__ - INFO - login
+2021-12-01 15:56:32,837 - __main__ - INFO - new_work_page1 December 2021 CMI Reporting
+2021-12-01 15:56:34,366 - __main__ - INFO - new_work_page2
+2021-12-01 15:56:49,943 - __main__ - INFO - enter_status_flag
+2021-12-01 15:56:52,349 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:56:53,494 - __main__ - INFO - bi_team
+2021-12-01 15:56:54,668 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:56:55,649 - __main__ - INFO - allocate
+2021-12-01 15:57:00,040 - __main__ - INFO - get project info
+2021-12-01 15:57:00,040 - __main__ - INFO - login
+2021-12-01 15:57:02,805 - __main__ - INFO - new_work_page1 December 2021 Cost Estimation
+2021-12-01 15:57:04,234 - __main__ - INFO - new_work_page2
+2021-12-01 15:57:18,683 - __main__ - INFO - enter_status_flag
+2021-12-01 15:57:21,420 - __main__ - INFO - bi_assignment_owner
+2021-12-01 15:57:22,548 - __main__ - INFO - bi_team
+2021-12-01 15:57:23,686 - __main__ - INFO - open_resource_search_window
+2021-12-01 15:57:24,671 - __main__ - INFO - allocate
+2021-12-01 15:57:29,014 - __main__ - INFO - quit

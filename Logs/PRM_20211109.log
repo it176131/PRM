@@ -1,0 +1,30 @@
+2021-11-09 14:53:54,730 - __main__ - INFO - read data
+2021-11-09 14:53:57,656 - __main__ - INFO - define options
+2021-11-09 14:53:57,658 - __main__ - INFO - _get_date
+2021-11-09 14:53:57,663 - __main__ - INFO - create driver
+2021-11-09 14:53:59,187 - __main__ - INFO - define wait
+2021-11-09 14:53:59,189 - __main__ - INFO - get project info
+2021-11-09 14:53:59,190 - __main__ - INFO - login
+2021-11-09 14:54:08,370 - __main__ - INFO - new_work_page1 November 2021 Cost Estimation
+2021-11-09 14:54:11,351 - __main__ - INFO - new_work_page2
+2021-11-09 14:54:29,607 - __main__ - INFO - enter_status_flag
+2021-11-09 14:54:31,530 - __main__ - INFO - bi_assignment_owner
+2021-11-09 14:54:32,727 - __main__ - INFO - bi_team
+2021-11-09 14:54:33,868 - __main__ - INFO - open_resource_search_window
+2021-11-09 14:54:34,874 - __main__ - INFO - allocate
+2021-11-09 14:54:37,301 - __main__ - INFO - quit
+2021-11-09 14:59:57,660 - __main__ - INFO - read data
+2021-11-09 15:00:00,223 - __main__ - INFO - define options
+2021-11-09 15:00:00,224 - __main__ - INFO - _get_date
+2021-11-09 15:00:00,226 - __main__ - INFO - create driver
+2021-11-09 15:00:01,469 - __main__ - INFO - define wait
+2021-11-09 15:00:01,471 - __main__ - INFO - get project info
+2021-11-09 15:00:01,471 - __main__ - INFO - login
+2021-11-09 15:00:08,652 - __main__ - INFO - new_work_page1 November 2021 Cost Estimation
+2021-11-09 15:00:11,555 - __main__ - INFO - new_work_page2
+2021-11-09 15:00:27,853 - __main__ - INFO - enter_status_flag
+2021-11-09 15:00:30,193 - __main__ - INFO - bi_assignment_owner
+2021-11-09 15:00:31,299 - __main__ - INFO - bi_team
+2021-11-09 15:00:32,475 - __main__ - INFO - open_resource_search_window
+2021-11-09 15:00:33,675 - __main__ - INFO - allocate
+2021-11-09 15:00:37,213 - __main__ - INFO - quit
