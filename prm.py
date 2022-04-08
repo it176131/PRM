@@ -1341,7 +1341,7 @@ if __name__ == "__main__":
 
     logger.info("define options")
     # define options
-    options = Options()
+    # options = Options()
     # options.headless = True
 
     logger.info("_get_date")
@@ -1352,7 +1352,8 @@ if __name__ == "__main__":
 
     logger.info("create driver")
     # create driver
-    driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Chrome(options=options)
+    driver = webdriver.Edge("msedgedriver.exe")
 
     logger.info("define wait")
     # define wait
