@@ -185,7 +185,7 @@ def new_work_page1(wait, today_str, description):
     workstream_input = wait.until(
         EC.presence_of_element_located(
             (By.CSS_SELECTOR,
-             "div[class='attribute-part'][title='Description of the project parent in Work stucture']"
+             "div[class='data-picker-form-field-container attribute-part'][title='Description of the project parent in Work stucture']"
              "> span"
              "> input")
         )
